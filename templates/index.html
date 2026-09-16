@@ -1,0 +1,3034 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Sourav Bouri - Cybersecurity portfolio focused on practical security, programming, Linux, defensive security and red team learning."
+    >
+
+    <title>
+        Sourav Bouri | Cybersecurity
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+
+    <!--
+        Hide the native OS cursor as early as possible (before first
+        paint) on precision-pointer devices, so there is never a flash
+        of the arrow cursor before script.js finishes loading.
+        Wrapped in try/catch so a failure here can never leave the
+        page without a usable cursor.
+    -->
+
+    <script>
+        try {
+            if (
+                window.matchMedia &&
+                window.matchMedia("(pointer: fine)").matches
+            ) {
+                document.documentElement.classList.add(
+                    "has-cyber-cursor"
+                );
+            }
+        } catch (error) {}
+    </script>
+
+</head>
+
+
+
+<body>
+
+
+<!-- ==================================================
+     AMBIENT FX LAYER
+     Matrix rain / scanlines / CRT vignette / grain
+================================================== -->
+
+<canvas
+    id="matrixRain"
+    class="matrix-rain"
+    aria-hidden="true"
+></canvas>
+
+<div class="scanline-overlay" aria-hidden="true"></div>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<div class="crt-vignette" aria-hidden="true"></div>
+
+<div class="cyber-cursor" aria-hidden="true">
+    <span class="cursor-dot"></span>
+    <span class="cursor-ring"></span>
+</div>
+
+
+<!-- ==================================================
+     NAVIGATION
+================================================== -->
+
+<header class="navbar">
+
+
+    <a
+        href="#home"
+        class="logo glitch-word"
+        data-text="SB"
+    >
+        SB
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a
+            href="#about"
+            data-section="about"
+        >
+            About
+        </a>
+
+        <a
+            href="#practice"
+            data-section="practice"
+        >
+            Practice
+        </a>
+
+        <a
+            href="#projects"
+            data-section="projects"
+        >
+            Projects
+        </a>
+
+        <a
+            href="#labs"
+            data-section="labs"
+        >
+            Labs
+        </a>
+
+        <a
+            href="#skills"
+            data-section="skills"
+        >
+            Toolkit
+        </a>
+
+        <a
+            href="#journey"
+            data-section="journey"
+        >
+            Journey
+        </a>
+
+        <a
+            href="#articles"
+            data-section="articles"
+        >
+            Articles
+        </a>
+
+    </nav>
+
+
+    <a
+        href="#contact"
+        class="contact-button"
+        data-section="contact"
+    >
+        Contact
+    </a>
+
+</header>
+
+
+
+<main>
+
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
+<section
+    class="hero page-section"
+    id="home"
+>
+
+
+    <div class="hero-background">
+
+        <div class="cyber-grid"></div>
+
+        <div class="hero-glow"></div>
+
+    </div>
+
+
+
+    <div class="hero-content">
+
+
+        <div class="availability">
+
+            <span class="pulse-dot"></span>
+
+            <span class="typed-line" data-typed>CURRENTLY LEARNING RED TEAMING</span>
+
+        </div>
+
+
+        <p class="hero-eyebrow scramble-text" data-scramble="CYBERSECURITY • BLUE TEAM • RED TEAM">
+
+            CYBERSECURITY
+            •
+            BLUE TEAM
+            •
+            RED TEAM
+
+        </p>
+
+
+        <h1 class="hero-title glitch-title">
+
+            <span
+                class="hero-word glitch-word"
+                data-text="Sourav"
+            >
+                Sourav
+            </span>
+
+            <span
+                class="hero-word muted-word glitch-word"
+                data-text="Bouri"
+            >
+                Bouri
+            </span>
+
+        </h1>
+
+
+        <h2 class="hero-statement scroll-text">
+
+            <span class="word">
+                Practice
+            </span>
+
+            <span class="word">
+                over
+            </span>
+
+            <span class="word highlight-word cursor-blink">
+                theory.
+            </span>
+
+        </h2>
+
+
+        <p class="hero-description">
+
+            I learn cybersecurity by understanding
+            systems, writing code, working with
+            Linux, solving practical problems and
+            investigating how things work.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+
+            <a
+                href="#projects"
+                class="primary-button"
+                data-section="projects"
+            >
+
+                Explore my work
+
+                <span>
+                    ↗
+                </span>
+
+            </a>
+
+
+            <a
+                href="#about"
+                class="secondary-button"
+                data-section="about"
+            >
+
+                About me
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- CYBER VISUAL : PHOTO + STATUS SIDEBAR -->
+
+    <div class="hero-visual-grid">
+
+
+        <div
+            class="hero-photo"
+            aria-hidden="true"
+        >
+
+            <div class="photo-frame">
+
+                <span class="frame-corner corner-tl"></span>
+                <span class="frame-corner corner-tr"></span>
+                <span class="frame-corner corner-bl"></span>
+                <span class="frame-corner corner-br"></span>
+
+                <img
+                    class="photo-img"
+                    src="{{ url_for('static', filename='images/sourav.jpg.jpeg') }}"
+                    alt="Sourav Bouri"
+                >
+
+                <div class="photo-scan"></div>
+
+                <div class="photo-grid-lines"></div>
+
+                <div class="photo-tag">
+
+                    <span class="pulse-dot"></span>
+
+                    IDENTITY VERIFIED
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <aside class="hero-sidebar">
+
+
+            <div class="sidebar-block">
+
+                <p class="sidebar-title">
+                    COMPUTER SCIENCE<br>
+                    ENGINEERING STUDENT
+                </p>
+
+                <div class="sidebar-rule"></div>
+
+                <ul class="sidebar-cycle">
+                    <li>LEARN</li>
+                    <li>BUILD</li>
+                    <li>HACK</li>
+                    <li>IMPROVE</li>
+                    <li>REPEAT</li>
+                </ul>
+
+            </div>
+
+
+            <div class="sidebar-block focus-block">
+
+                <p class="sidebar-flag">
+
+                    <span class="pulse-dot"></span>
+
+                    FOCUS AREAS
+
+                </p>
+
+                <ul class="focus-list">
+
+                    <li>Cybersecurity</li>
+                    <li>Linux &amp; Systems</li>
+                    <li>Networking</li>
+                    <li>Scripting &amp; Automation</li>
+                    <li>Hardware &amp; Tech</li>
+                    <li>Problem Solving</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="sidebar-block location-block">
+
+                <p class="sidebar-label">LOCATION</p>
+
+                <p class="sidebar-value">India</p>
+
+                <div class="sidebar-rule"></div>
+
+                <p class="sidebar-footnote">
+                    TURNING CURIOSITY<br>
+                    INTO SKILLS.
+                </p>
+
+            </div>
+
+
+        </aside>
+
+
+    </div>
+
+
+
+    <div class="scroll-indicator">
+
+        <span>
+            SCROLL TO EXPLORE
+        </span>
+
+        <div class="scroll-line"></div>
+
+    </div>
+
+
+    <div class="hero-marquee" aria-hidden="true">
+
+        <div class="marquee-track">
+
+            <span>&lt; BUILDING A BETTER TOMORROW /&gt;</span>
+            <span>// STUDY // PRACTICE // PROGRESS //</span>
+            <span>&lt; BUILDING A BETTER TOMORROW /&gt;</span>
+            <span>// STUDY // PRACTICE // PROGRESS //</span>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     ABOUT
+================================================== -->
+
+<section
+    class="about-section page-section cinematic-section"
+    id="about"
+>
+
+
+    <div class="section-container">
+
+
+        <div class="section-heading">
+
+            <p class="section-eyebrow">
+                01 / ABOUT ME
+            </p>
+
+
+            <h2 class="cinematic-title">
+
+                <span class="word">
+                    Curiosity
+                </span>
+
+                <span class="word">
+                    drives
+                </span>
+
+                <span class="word muted-word">
+                    everything
+                </span>
+
+                <span class="word muted-word">
+                    I
+                </span>
+
+                <span class="word highlight-word">
+                    learn.
+                </span>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="about-introduction">
+
+
+            <div class="about-intro-main">
+
+
+                <p class="about-lead scroll-paragraph">
+
+                    I am a
+                    <span class="emphasis">
+                        Computer Science student
+                    </span>
+                    who enjoys understanding
+                    technology from the inside out.
+
+                </p>
+
+
+                <p class="scroll-paragraph">
+
+                    My interests move across
+                    <span class="emphasis">
+                        software
+                    </span>,
+                    computer hardware,
+                    cybersecurity,
+                    mathematics,
+                    science and cryptography.
+
+                </p>
+
+
+                <p class="scroll-paragraph">
+
+                    I enjoy taking something I do not
+                    understand and slowly breaking it
+                    down until the pieces
+                    <span class="emphasis">
+                        make sense.
+                    </span>
+
+                </p>
+
+
+                <p class="scroll-paragraph">
+
+                    In cybersecurity, my primary direction
+                    is defensive security. I am interested
+                    in understanding systems, analysing
+                    behaviour, finding threats and learning
+                    how security teams protect infrastructure.
+
+                </p>
+
+
+                <div class="learning-pill">
+
+                    <span class="pulse-dot"></span>
+
+                    CURRENTLY LEARNING
+
+                    <strong>
+                        RED TEAMING
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="identity-panel">
+
+
+                <div class="identity-top">
+
+                    <span>
+                        PROFILE
+                    </span>
+
+                    <span>
+                        01
+                    </span>
+
+                </div>
+
+
+                <div class="identity-name">
+
+                    SOURAV
+                    <br>
+                    BOURI
+
+                </div>
+
+
+                <div class="identity-role">
+
+                    COMPUTER SCIENCE
+                    •
+                    CYBERSECURITY
+
+                </div>
+
+
+                <div class="identity-list">
+
+
+                    <div>
+
+                        <span>
+                            PRIMARY FOCUS
+                        </span>
+
+                        <strong>
+                            BLUE TEAM
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            CURRENT DIRECTION
+                        </span>
+
+                        <strong>
+                            RED TEAM
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            ENVIRONMENT
+                        </span>
+
+                        <strong>
+                            LINUX
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            APPROACH
+                        </span>
+
+                        <strong>
+                            PRACTICAL
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            MINDSET
+                        </span>
+
+                        <strong>
+                            CURIOUS
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ==================================================
+             JOURNEY
+        ================================================== -->
+
+        <div class="about-story cinematic-block">
+
+
+            <div class="story-label">
+
+                <span>
+                    01
+                </span>
+
+                MY JOURNEY
+
+            </div>
+
+
+            <div class="story-content">
+
+                <h3 class="cinematic-subtitle">
+
+                    <span class="word">
+                        From
+                    </span>
+
+                    <span class="word">
+                        curiosity
+                    </span>
+
+                    <span class="word muted-word">
+                        to
+                    </span>
+
+                    <span class="word highlight-word">
+                        cybersecurity.
+                    </span>
+
+                </h3>
+
+
+                <p class="scroll-paragraph">
+
+                    My journey started with Computer
+                    Science and a curiosity about how
+                    technology actually works.
+
+                </p>
+
+
+                <p class="scroll-paragraph">
+
+                    Programming gave me a way to build
+                    things. Learning operating systems
+                    and computer systems helped me
+                    understand what happens underneath
+                    the applications I use.
+
+                </p>
+
+
+                <p class="scroll-paragraph">
+
+                    That curiosity naturally led me
+                    towards cybersecurity, where I began
+                    exploring networking, defensive
+                    security, security labs and practical
+                    experimentation.
+
+                </p>
+
+
+                <p class="scroll-paragraph">
+
+                    Now I am expanding that understanding
+                    by learning both sides of security:
+                    defending systems and beginning to
+                    understand offensive security.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ==================================================
+             GOAL
+        ================================================== -->
+
+        <div class="goal-block cinematic-block">
+
+
+            <div class="goal-label">
+
+                <span>
+                    02
+                </span>
+
+                MY GOAL
+
+            </div>
+
+
+            <div class="goal-content">
+
+
+                <div class="goal-mark">
+                    →
+                </div>
+
+
+                <h3 class="cinematic-subtitle">
+
+                    <span class="word">
+                        Understand
+                    </span>
+
+                    <span class="word">
+                        systems
+                    </span>
+
+                    <span class="word muted-word">
+                        deeply.
+                    </span>
+
+                    <span class="word highlight-word">
+                        Defend them effectively.
+                    </span>
+
+                </h3>
+
+
+                <p class="scroll-paragraph">
+
+                    My long-term goal is to become a strong
+                    cybersecurity professional who understands
+                    systems deeply, can defend them effectively,
+                    and can think like an attacker when testing
+                    their security.
+
+                </p>
+
+
+                <div class="goal-tags">
+
+                    <span>
+                        DEFENSIVE SECURITY
+                    </span>
+
+                    <span>
+                        SOC
+                    </span>
+
+                    <span>
+                        NETWORK SECURITY
+                    </span>
+
+                    <span>
+                        RED TEAM
+                    </span>
+
+                    <span>
+                        SECURITY RESEARCH
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ==================================================
+             CURIOSITY
+        ================================================== -->
+
+        <div class="curiosity-block cinematic-block">
+
+
+            <div class="story-label">
+
+                <span>
+                    03
+                </span>
+
+                BEYOND CYBERSECURITY
+
+            </div>
+
+
+            <div class="curiosity-header">
+
+                <h3 class="cinematic-subtitle">
+
+                    <span class="word">
+                        I
+                    </span>
+
+                    <span class="word">
+                        like
+                    </span>
+
+                    <span class="word">
+                        following
+                    </span>
+
+                    <span class="word highlight-word">
+                        questions.
+                    </span>
+
+                </h3>
+
+
+                <p class="scroll-paragraph">
+
+                    Cybersecurity is only one part of
+                    what I enjoy learning.
+
+                    Most of my free time goes into
+                    discovering how the world and
+                    technology work.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="curiosity-grid">
+
+
+                <article class="curiosity-card interactive-card">
+
+                    <span>
+                        01
+                    </span>
+
+                    <strong>
+                        COMPUTERS
+                    </strong>
+
+                    <p>
+
+                        Exploring both computer
+                        software and hardware,
+                        from applications to the
+                        components underneath them.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="curiosity-card interactive-card">
+
+                    <span>
+                        02
+                    </span>
+
+                    <strong>
+                        READING
+                    </strong>
+
+                    <p>
+
+                        Books, Substack posts,
+                        technical articles and
+                        long-form explanations
+                        that teach me something new.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="curiosity-card interactive-card">
+
+                    <span>
+                        03
+                    </span>
+
+                    <strong>
+                        SCIENCE
+                    </strong>
+
+                    <p>
+
+                        Learning scientific facts,
+                        concepts and the reasoning
+                        behind how things work.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="curiosity-card interactive-card">
+
+                    <span>
+                        04
+                    </span>
+
+                    <strong>
+                        MATHEMATICS
+                    </strong>
+
+                    <p>
+
+                        Exploring mathematics because
+                        it gives me another way to
+                        understand patterns, logic
+                        and problem solving.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="curiosity-card interactive-card">
+
+                    <span>
+                        05
+                    </span>
+
+                    <strong>
+                        CRYPTOGRAPHY
+                    </strong>
+
+                    <p>
+
+                        Exploring the mathematics,
+                        algorithms and ideas behind
+                        secure communication.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="curiosity-card interactive-card">
+
+                    <span>
+                        06
+                    </span>
+
+                    <strong>
+                        FACT FINDING
+                    </strong>
+
+                    <p>
+
+                        Investigating questions,
+                        checking facts and discovering
+                        scientific knowledge that
+                        challenges my assumptions.
+
+                    </p>
+
+                </article>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ==================================================
+             EDUCATION
+        ================================================== -->
+
+        <div class="education-block cinematic-block">
+
+
+            <div class="education-index">
+
+                <span>
+                    EDUCATION
+                </span>
+
+                <strong>
+                    04
+                </strong>
+
+            </div>
+
+
+            <div class="education-content">
+
+                <p>
+                    2023 — 2027
+                </p>
+
+
+                <h3>
+
+                    B.Tech in
+                    <span>
+                        Computer Science
+                    </span>
+
+                </h3>
+
+
+                <h4>
+
+                    IoT, Cyber Security &
+                    Blockchain Technology
+
+                </h4>
+
+
+                <div class="education-specialization">
+
+                    COMPUTER SCIENCE
+                    •
+                    CYBERSECURITY
+                    •
+                    NETWORKING
+                    •
+                    BLOCKCHAIN
+
+                </div>
+
+            </div>
+
+
+            <div class="education-symbol">
+
+                <span>
+                    CS
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     PRACTICE
+================================================== -->
+
+<section
+    class="portfolio-section page-section cinematic-section"
+    id="practice"
+>
+
+
+    <div class="section-container">
+
+
+        <div class="section-heading">
+
+            <p class="section-eyebrow">
+                02 / PHILOSOPHY
+            </p>
+
+
+            <h2 class="cinematic-title">
+
+                <span class="word">
+                    Practice
+                </span>
+
+                <span class="word">
+                    over
+                </span>
+
+                <span class="word highlight-word">
+                    theory.
+                </span>
+
+            </h2>
+
+
+            <p class="section-description scroll-paragraph">
+
+                Theory gives me the foundation.
+                Practice turns knowledge into
+                something I can actually use.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="practice-layout">
+
+
+            <div class="practice-main interactive-card">
+
+
+                <div class="practice-number">
+                    01
+                </div>
+
+
+                <div class="practice-icon">
+                    &lt;/&gt;
+                </div>
+
+
+                <h3>
+                    Coding
+                </h3>
+
+
+                <p>
+
+                    Writing code helps me understand
+                    how software behaves rather than
+                    simply memorising programming
+                    concepts.
+
+                </p>
+
+
+                <div class="practice-tags">
+
+                    <span>
+                        Python
+                    </span>
+
+                    <span>
+                        Java
+                    </span>
+
+                    <span>
+                        C
+                    </span>
+
+                    <span>
+                        Bash
+                    </span>
+
+                    <span>
+                        PowerShell
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="practice-side">
+
+
+                <div class="practice-small interactive-card">
+
+                    <span>
+                        02
+                    </span>
+
+                    <strong>
+                        LABS
+                    </strong>
+
+                    <p>
+
+                        Solve practical challenges
+                        and learn from interacting
+                        directly with systems.
+
+                    </p>
+
+                </div>
+
+
+                <div class="practice-small interactive-card">
+
+                    <span>
+                        03
+                    </span>
+
+                    <strong>
+                        SYSTEMS
+                    </strong>
+
+                    <p>
+
+                        Work with operating systems,
+                        networking and command-line
+                        environments.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     PROJECTS
+================================================== -->
+
+<section
+    class="portfolio-section page-section cinematic-section"
+    id="projects"
+>
+
+
+    <div class="section-container">
+
+
+        <div class="section-heading">
+
+            <p class="section-eyebrow">
+                03 / PROJECTS
+            </p>
+
+
+            <h2 class="cinematic-title">
+
+                <span class="word">
+                    Things
+                </span>
+
+                <span class="word">
+                    I
+                </span>
+
+                <span class="word highlight-word">
+                    build.
+                </span>
+
+            </h2>
+
+
+            <p class="section-description scroll-paragraph">
+
+                Projects where programming,
+                problem solving and security
+                meet.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="project-grid">
+
+
+            <article class="project-card interactive-card">
+
+
+                <span class="card-number">
+                    01
+                </span>
+
+
+                <div class="project-icon">
+                    ⌕
+                </div>
+
+
+                <div class="project-content">
+
+                    <span class="card-label">
+                        SECURITY
+                    </span>
+
+
+                    <h3>
+                        Phishing Link
+                        Detector
+                    </h3>
+
+
+                    <p class="card-summary">
+
+                        A security-focused project
+                        for analysing URLs and
+                        identifying suspicious
+                        characteristics.
+
+                    </p>
+
+
+                    <div class="card-details">
+
+                        <p>
+
+                            A practical project for
+                            understanding URL analysis,
+                            suspicious patterns and
+                            defensive security thinking.
+
+                        </p>
+
+
+                        <div class="technology-list">
+
+                            <span>
+                                Python
+                            </span>
+
+                            <span>
+                                Security
+                            </span>
+
+                            <span>
+                                URL Analysis
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <span class="card-arrow">
+                    ↗
+                </span>
+
+
+            </article>
+
+
+
+            <article class="project-card interactive-card">
+
+
+                <span class="card-number">
+                    02
+                </span>
+
+
+                <div class="project-icon">
+                    ◈
+                </div>
+
+
+                <div class="project-content">
+
+                    <span class="card-label">
+                        SECURITY
+                    </span>
+
+
+                    <h3>
+                        Secure
+                        Vault
+                    </h3>
+
+
+                    <p class="card-summary">
+
+                        A project exploring secure
+                        storage, authentication and
+                        protecting sensitive data.
+
+                    </p>
+
+
+                    <div class="card-details">
+
+                        <p>
+
+                            Designed to strengthen
+                            understanding of application
+                            security and data protection.
+
+                        </p>
+
+
+                        <div class="technology-list">
+
+                            <span>
+                                Python
+                            </span>
+
+                            <span>
+                                Security
+                            </span>
+
+                            <span>
+                                Data Protection
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <span class="card-arrow">
+                    ↗
+                </span>
+
+
+            </article>
+
+
+
+            <article class="project-card interactive-card">
+
+
+                <span class="card-number">
+                    03
+                </span>
+
+
+                <div class="project-icon">
+                    ◉
+                </div>
+
+
+                <div class="project-content">
+
+                    <span class="card-label">
+                        PROGRAMMING
+                    </span>
+
+
+                    <h3>
+                        Typing Speed
+                        Tester
+                    </h3>
+
+
+                    <p class="card-summary">
+
+                        A programming project focused
+                        on timing, interaction and
+                        performance calculation.
+
+                    </p>
+
+
+                    <div class="card-details">
+
+                        <p>
+
+                            A project for strengthening
+                            programming fundamentals
+                            and application logic.
+
+                        </p>
+
+
+                        <div class="technology-list">
+
+                            <span>
+                                Python
+                            </span>
+
+                            <span>
+                                Logic
+                            </span>
+
+                            <span>
+                                Algorithms
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <span class="card-arrow">
+                    ↗
+                </span>
+
+
+            </article>
+
+
+
+            <article class="project-card interactive-card">
+
+
+                <span class="card-number">
+                    04
+                </span>
+
+
+                <div class="project-icon">
+                    #
+                </div>
+
+
+                <div class="project-content">
+
+                    <span class="card-label">
+                        COMPUTER SCIENCE
+                    </span>
+
+
+                    <h3>
+                        DSA
+                        Practice
+                    </h3>
+
+
+                    <p class="card-summary">
+
+                        Data structures and algorithms
+                        practice for strengthening
+                        problem-solving fundamentals.
+
+                    </p>
+
+
+                    <div class="card-details">
+
+                        <p>
+
+                            Strong programming fundamentals
+                            form the foundation for building
+                            better security tools.
+
+                        </p>
+
+
+                        <div class="technology-list">
+
+                            <span>
+                                C
+                            </span>
+
+                            <span>
+                                Java
+                            </span>
+
+                            <span>
+                                Python
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <span class="card-arrow">
+                    ↗
+                </span>
+
+
+            </article>
+
+
+        </div>
+
+
+
+        <a
+            href="https://github.com/Souravbouri"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-project-link"
+        >
+
+            View projects on GitHub
+
+            <span>
+                ↗
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     LABS
+================================================== -->
+
+<section
+    class="portfolio-section page-section cinematic-section"
+    id="labs"
+>
+
+
+    <div class="section-container">
+
+
+        <div class="section-heading">
+
+            <p class="section-eyebrow">
+                04 / LABS
+            </p>
+
+
+            <h2 class="cinematic-title">
+
+                <span class="word">
+                    Learn
+                </span>
+
+                <span class="word">
+                    by
+                </span>
+
+                <span class="word highlight-word">
+                    doing.
+                </span>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="lab-layout">
+
+
+            <div class="lab-main">
+
+
+                <div class="terminal-header">
+
+
+                    <div class="terminal-dots">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <p>
+                        sourav@security-lab:~
+                    </p>
+
+                </div>
+
+
+                <div class="terminal-body">
+
+
+                    <p>
+
+                        <span class="terminal-green">
+                            sourav@lab
+                        </span>
+
+                        :
+
+                        <span class="terminal-blue">
+                            ~
+                        </span>
+
+                        $
+
+                        whoami
+
+                    </p>
+
+
+                    <p class="terminal-output">
+
+                        cybersecurity_student
+
+                    </p>
+
+
+                    <p>
+
+                        <span class="terminal-green">
+                            sourav@lab
+                        </span>
+
+                        :
+
+                        <span class="terminal-blue">
+                            ~
+                        </span>
+
+                        $
+
+                        learning --mode practical
+
+                    </p>
+
+
+                    <p class="terminal-output">
+
+                        Blue Team
+                        <br>
+
+                        SOC Analysis
+                        <br>
+
+                        Networking
+                        <br>
+
+                        Linux
+                        <br>
+
+                        Red Team Foundations
+
+                    </p>
+
+
+                    <p>
+
+                        <span class="terminal-green">
+                            sourav@lab
+                        </span>
+
+                        :
+
+                        <span class="terminal-blue">
+                            ~
+                        </span>
+
+                        $
+
+                        <span class="terminal-cursor"></span>
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="lab-side">
+
+
+                <div class="lab-card interactive-card">
+
+                    <span class="lab-number">
+                        01
+                    </span>
+
+                    <div class="card-label">
+                        TRYHACKME
+                    </div>
+
+                    <h3>
+                        Security
+                        Labs
+                    </h3>
+
+                    <p>
+
+                        Hands-on rooms and challenges
+                        for developing practical
+                        cybersecurity knowledge.
+
+                    </p>
+
+                </div>
+
+
+                <div class="lab-card interactive-card">
+
+                    <span class="lab-number">
+                        02
+                    </span>
+
+                    <div class="card-label">
+                        DIRECTION
+                    </div>
+
+                    <h3>
+                        Red Team
+                    </h3>
+
+                    <p>
+
+                        Beginning to understand
+                        offensive security and
+                        attacker methodology.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     TOOLKIT
+================================================== -->
+
+<section
+    class="portfolio-section page-section cinematic-section"
+    id="skills"
+>
+
+
+    <div class="section-container">
+
+
+        <div class="section-heading">
+
+            <p class="section-eyebrow">
+                05 / TOOLKIT
+            </p>
+
+
+            <h2 class="cinematic-title">
+
+                <span class="word">
+                    Tools
+                </span>
+
+                <span class="word">
+                    are
+                </span>
+
+                <span class="word muted-word">
+                    useful.
+                </span>
+
+                <span class="word highlight-word">
+                    Understanding is better.
+                </span>
+
+            </h2>
+
+
+            <p class="section-description scroll-paragraph">
+
+                My toolkit grows as I experiment,
+                build projects and solve practical
+                problems.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="skills-grid">
+
+
+            <article class="skill-card interactive-card">
+
+                <div class="skill-top">
+
+                    <span>
+                        01
+                    </span>
+
+                    <strong>
+                        CODE
+                    </strong>
+
+                </div>
+
+
+                <h3>
+                    Programming
+                </h3>
+
+
+                <p>
+
+                    Languages I use to build projects,
+                    practise problem solving and
+                    understand software.
+
+                </p>
+
+
+                <div class="skill-hidden">
+
+                    <span>
+                        Python
+                    </span>
+
+                    <span>
+                        Java
+                    </span>
+
+                    <span>
+                        C
+                    </span>
+
+                    <span>
+                        Bash
+                    </span>
+
+                    <span>
+                        PowerShell
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="skill-card interactive-card">
+
+                <div class="skill-top">
+
+                    <span>
+                        02
+                    </span>
+
+                    <strong>
+                        OS
+                    </strong>
+
+                </div>
+
+
+                <h3>
+                    Linux
+                </h3>
+
+
+                <p>
+
+                    Linux environments are a major
+                    part of my cybersecurity learning
+                    and experimentation.
+
+                </p>
+
+
+                <div class="skill-hidden">
+
+                    <span>
+                        Fedora
+                    </span>
+
+                    <span>
+                        Kali Linux
+                    </span>
+
+                    <span>
+                        Ubuntu
+                    </span>
+
+                    <span>
+                        Arch Linux
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="skill-card interactive-card">
+
+                <div class="skill-top">
+
+                    <span>
+                        03
+                    </span>
+
+                    <strong>
+                        SEC
+                    </strong>
+
+                </div>
+
+
+                <h3>
+                    Security
+                </h3>
+
+
+                <p>
+
+                    Defensive security concepts and
+                    practical security analysis.
+
+                </p>
+
+
+                <div class="skill-hidden">
+
+                    <span>
+                        SOC
+                    </span>
+
+                    <span>
+                        Threat Detection
+                    </span>
+
+                    <span>
+                        Incident Response
+                    </span>
+
+                    <span>
+                        Red Team
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="skill-card interactive-card">
+
+                <div class="skill-top">
+
+                    <span>
+                        04
+                    </span>
+
+                    <strong>
+                        NET
+                    </strong>
+
+                </div>
+
+
+                <h3>
+                    Networking
+                </h3>
+
+
+                <p>
+
+                    Understanding how systems communicate
+                    helps me understand both attacks
+                    and defenses.
+
+                </p>
+
+
+                <div class="skill-hidden">
+
+                    <span>
+                        TCP/IP
+                    </span>
+
+                    <span>
+                        DNS
+                    </span>
+
+                    <span>
+                        HTTP
+                    </span>
+
+                    <span>
+                        Wireshark
+                    </span>
+
+                    <span>
+                        Nmap
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="skill-card interactive-card">
+
+                <div class="skill-top">
+
+                    <span>
+                        05
+                    </span>
+
+                    <strong>
+                        TOOLS
+                    </strong>
+
+                </div>
+
+
+                <h3>
+                    Security Tools
+                </h3>
+
+
+                <p>
+
+                    Tools turn concepts into practical
+                    investigation and experimentation.
+
+                </p>
+
+
+                <div class="skill-hidden">
+
+                    <span>
+                        Wireshark
+                    </span>
+
+                    <span>
+                        Nmap
+                    </span>
+
+                    <span>
+                        Git
+                    </span>
+
+                    <span>
+                        Linux CLI
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="skill-card interactive-card">
+
+                <div class="skill-top">
+
+                    <span>
+                        06
+                    </span>
+
+                    <strong>
+                        WEB
+                    </strong>
+
+                </div>
+
+
+                <h3>
+                    Web Security
+                </h3>
+
+
+                <p>
+
+                    Learning how web applications work
+                    and where security weaknesses can
+                    appear.
+
+                </p>
+
+
+                <div class="skill-hidden">
+
+                    <span>
+                        HTTP
+                    </span>
+
+                    <span>
+                        Web Security
+                    </span>
+
+                    <span>
+                        Authentication
+                    </span>
+
+                    <span>
+                        OWASP Concepts
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="skill-card interactive-card">
+
+                <div class="skill-top">
+
+                    <span>
+                        07
+                    </span>
+
+                    <strong>
+                        DEV
+                    </strong>
+
+                </div>
+
+
+                <h3>
+                    Git
+                </h3>
+
+
+                <p>
+
+                    Version control for projects,
+                    experimentation and development
+                    history.
+
+                </p>
+
+
+                <div class="skill-hidden">
+
+                    <span>
+                        Git
+                    </span>
+
+                    <span>
+                        GitHub
+                    </span>
+
+                    <span>
+                        Branching
+                    </span>
+
+                    <span>
+                        CLI
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="skill-card interactive-card">
+
+                <div class="skill-top">
+
+                    <span>
+                        08
+                    </span>
+
+                    <strong>
+                        BLUE
+                    </strong>
+
+                </div>
+
+
+                <h3>
+                    Analysis
+                </h3>
+
+
+                <p>
+
+                    Turning logs, traffic and system
+                    behaviour into useful security
+                    information.
+
+                </p>
+
+
+                <div class="skill-hidden">
+
+                    <span>
+                        Log Analysis
+                    </span>
+
+                    <span>
+                        Monitoring
+                    </span>
+
+                    <span>
+                        Threat Hunting
+                    </span>
+
+                    <span>
+                        SIEM Concepts
+                    </span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     JOURNEY
+================================================== -->
+
+<section
+    class="portfolio-section page-section cinematic-section"
+    id="journey"
+>
+
+
+    <div class="section-container">
+
+
+        <div class="section-heading">
+
+            <p class="section-eyebrow">
+                06 / JOURNEY
+            </p>
+
+
+            <h2 class="cinematic-title">
+
+                <span class="word">
+                    Still
+                </span>
+
+                <span class="word">
+                    learning.
+                </span>
+
+                <span class="word muted-word">
+                    Still
+                </span>
+
+                <span class="word highlight-word">
+                    building.
+                </span>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-line"></div>
+
+
+            <div class="timeline-item current">
+
+                <span class="timeline-dot"></span>
+
+
+                <div class="timeline-year">
+                    2023
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Computer Science
+                    </h3>
+
+                    <p>
+
+                        Started my B.Tech journey
+                        and began strengthening
+                        programming and computer
+                        science fundamentals.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="timeline-item">
+
+                <span class="timeline-dot"></span>
+
+
+                <div class="timeline-year">
+                    2024
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Programming &
+                        Systems
+                    </h3>
+
+                    <p>
+
+                        Continued learning programming,
+                        computer systems, operating
+                        systems and technical foundations.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="timeline-item">
+
+                <span class="timeline-dot"></span>
+
+
+                <div class="timeline-year">
+                    2025
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Cybersecurity
+                    </h3>
+
+                    <p>
+
+                        Began moving deeper into
+                        networking, defensive security,
+                        security labs and practical
+                        experimentation.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="timeline-item future">
+
+                <span class="timeline-dot"></span>
+
+
+                <div class="timeline-year">
+                    2026+
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Red Team
+                    </h3>
+
+                    <p>
+
+                        Expanding into offensive security
+                        while continuing to strengthen
+                        defensive cybersecurity skills.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     ARTICLES
+
+     To add a new article later, copy one whole
+     <a class="article-card"> ... </a> block inside
+     .article-grid and change the image / tags /
+     title / description / href.
+================================================== -->
+
+<section
+    class="articles-section page-section"
+    id="articles"
+>
+
+
+    <div class="section-container">
+
+
+        <div class="section-heading">
+
+            <p class="section-eyebrow">
+                07 / ARTICLES
+            </p>
+
+
+            <h2 class="cinematic-title">
+
+                <span class="word">
+                    Writing
+                </span>
+
+                <span class="word">
+                    what
+                </span>
+
+                <span class="word highlight-word">
+                    I learn.
+                </span>
+
+            </h2>
+
+
+            <p class="section-description scroll-paragraph">
+
+                Breaking down what I build and
+                learn, one write-up at a time.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="article-grid">
+
+
+            <a
+                class="article-card"
+                href="https://medium.com/@dassourav51516/i-built-a-network-sniffer-in-python-during-my-internship-heres-what-nobody-tells-you-about-it-92311d7481a1"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="article-thumb">
+
+                    <img
+                        src="https://miro.medium.com/v2/resize:fit:1200/1*FJsbgo7uKp2c-eUjb5RRdA.jpeg"
+                        alt=""
+                        loading="lazy"
+                    >
+
+                    <div class="article-thumb-scan"></div>
+
+                    <div class="article-thumb-grid"></div>
+
+                </div>
+
+
+                <div class="article-body">
+
+                    <div class="article-meta">
+
+                        <span>Python</span>
+                        <span>Networking</span>
+                        <span class="article-time">7 min read</span>
+
+                    </div>
+
+
+                    <h3>
+                        I Built a Network Sniffer
+                        in Python During My Internship
+                    </h3>
+
+
+                    <p>
+
+                        What actually happened when I tried
+                        to build a packet sniffer from scratch —
+                        raw sockets, parsing Ethernet / IP / TCP
+                        headers, and what watching my own
+                        traffic taught me about DNS.
+
+                    </p>
+
+
+                    <span class="article-link">
+
+                        Read on Medium
+
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <a
+                class="article-card"
+                href="https://sourav2004.substack.com/p/god-society-and-the-courage-to-think?r=8mbjue&amp;utm_campaign=post-expanded-share&amp;utm_medium=post%20viewer"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="article-thumb article-thumb-text">
+
+                    <span class="thumb-glyph">¶</span>
+
+                    <div class="article-thumb-scan"></div>
+
+                    <div class="article-thumb-grid"></div>
+
+                </div>
+
+
+                <div class="article-body">
+
+                    <div class="article-meta">
+
+                        <span>Philosophy</span>
+                        <span>Essay</span>
+                        <span class="article-time">Substack</span>
+
+                    </div>
+
+
+                    <h3>
+                        God, Society, and the
+                        Courage to Think
+                    </h3>
+
+
+                    <p>
+
+                        Stepping outside cybersecurity for a
+                        moment — a personal essay on belief,
+                        society, and the discipline of thinking
+                        for yourself instead of borrowing an
+                        answer.
+
+                    </p>
+
+
+                    <span class="article-link">
+
+                        Read on Substack
+
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+
+                    </span>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     CONTACT
+================================================== -->
+
+<section
+    class="contact-section page-section"
+    id="contact"
+>
+
+
+    <div class="contact-glow"></div>
+
+
+    <div class="contact-content">
+
+
+        <p class="section-eyebrow">
+            08 / CONTACT
+        </p>
+
+
+        <h2 class="cinematic-title">
+
+            <span class="word">
+                Let's
+            </span>
+
+            <span class="word">
+                talk
+            </span>
+
+            <span class="word highlight-word">
+                security.
+            </span>
+
+        </h2>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-info">
+
+                <p class="scroll-paragraph">
+
+                    Interested in cybersecurity,
+                    technology, projects or
+                    collaboration?
+
+                    You can find me here.
+
+                </p>
+
+
+
+                <div class="social-links">
+
+
+                    <a
+                        href="https://github.com/Souravbouri"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <span>
+                            CODE
+                        </span>
+
+                        <strong>
+                            GitHub
+                        </strong>
+
+                        <b>
+                            ↗
+                        </b>
+
+                    </a>
+
+
+                    <a
+                        href="https://www.linkedin.com/in/sourav-bouri-5ba902293/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <span>
+                            PROFESSIONAL
+                        </span>
+
+                        <strong>
+                            LinkedIn
+                        </strong>
+
+                        <b>
+                            ↗
+                        </b>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!--
+                Sends to /contact on this same Flask app.
+                The actual inbox address lives only in the
+                server's .env file -- it is never present
+                anywhere in this HTML or in script.js.
+            -->
+
+            <form
+                class="contact-form"
+                id="contactForm"
+                novalidate
+            >
+
+                <div
+                    class="form-status"
+                    id="formStatus"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+
+                <label class="form-field">
+
+                    <span class="field-label">Name</span>
+
+                    <input
+                        type="text"
+                        name="name"
+                        id="cf-name"
+                        placeholder="Your Name"
+                        autocomplete="name"
+                        maxlength="120"
+                        required
+                    >
+
+                </label>
+
+
+                <label class="form-field">
+
+                    <span class="field-label">Email</span>
+
+                    <input
+                        type="email"
+                        name="email"
+                        id="cf-email"
+                        placeholder="Your Email"
+                        autocomplete="email"
+                        maxlength="180"
+                        required
+                    >
+
+                </label>
+
+
+                <label class="form-field">
+
+                    <span class="field-label">Subject</span>
+
+                    <input
+                        type="text"
+                        name="subject"
+                        id="cf-subject"
+                        placeholder="Subject"
+                        maxlength="150"
+                        required
+                    >
+
+                </label>
+
+
+                <label class="form-field">
+
+                    <span class="field-label">Message</span>
+
+                    <textarea
+                        name="message"
+                        id="cf-message"
+                        placeholder="Your Message"
+                        rows="5"
+                        maxlength="4000"
+                        required
+                    ></textarea>
+
+                </label>
+
+
+                <!-- honeypot -- kept off-screen for real visitors,
+                     bots that auto-fill every field tend to fill
+                     this one too -->
+
+                <div class="form-honeypot" aria-hidden="true">
+
+                    <label>
+                        Leave this field empty
+
+                        <input
+                            type="text"
+                            name="company"
+                            id="cf-company"
+                            tabindex="-1"
+                            autocomplete="off"
+                        >
+
+                    </label>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="form-submit"
+                    id="cf-submit"
+                >
+
+                    <span class="submit-label">
+                        Send Message
+                    </span>
+
+                    <span
+                        class="submit-spinner"
+                        aria-hidden="true"
+                    ></span>
+
+                </button>
+
+
+            </form>
+
+
+        </div>
+
+
+
+        <footer class="footer">
+
+            <span>
+                SOURAV BOURI
+            </span>
+
+            <span>
+                CYBERSECURITY PORTFOLIO
+            </span>
+
+        </footer>
+
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<script
+    src="{{ url_for('static', filename='js/script.js') }}"
+></script>
+
+
+</body>
+
+</html>
